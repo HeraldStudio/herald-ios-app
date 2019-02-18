@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  HeraldApp
+
+  Created by Wolf-Tungsten on 2019/2/12.
+  Copyright © 2019 Herald Studio. All rights reserved.
+*/
+
+// LoginView
+
+"LoginView_cardnumPlaceHolder" = "一卡通号";
+"LoginView_passwordPlaceHolder" = "统一身份认证密码";
+"LoginView_loginButtonTitle" = "统一身份认证登录";
+"LoginView_description" = "小猴偷米使用业界公认标准加密你的所有隐私数据，使用只有你知道的统一身份认证密码和只有你的设备保存的会话标识符 (token) 作为数据解密的密钥。";
+"LoginView_copyright" = "版权所有©2001-2019 东南大学小猴偷米工作室";
+
+

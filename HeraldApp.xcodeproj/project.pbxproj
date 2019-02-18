@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16493D5A8E871CAE1EF699F4 /* Pods_today_ext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8EF41E539664979B91B7BB /* Pods_today_ext.framework */; };
+		1905AB6F221AA89D0095FA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1905AB6E221AA89D0095FA64 /* Assets.xcassets */; };
+		1905AB72221AEA980095FA64 /* GRHContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB71221AEA980095FA64 /* GRHContentViewModel.m */; };
+		1905AB75221AEBB90095FA64 /* GRHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB74221AEBB90095FA64 /* GRHContentViewController.m */; };
+		192B08BD22194A8800EC7494 /* GRHWKURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */; };
+		194F360D220D206B00EFB3AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F360C220D206B00EFB3AD /* LaunchScreen.xib */; };
+		194F361D220D38EA00EFB3AD /* GRHNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F361C220D38EA00EFB3AD /* GRHNavigationControllerStack.m */; };
+		194F3621220DCB8B00EFB3AD /* GRHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F3620220DCB8B00EFB3AD /* GRHRouter.m */; };
+		194F3624220DD03500EFB3AD /* GRHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F3623220DD03500EFB3AD /* GRHViewController.m */; };
+		194F3627220DD0F200EFB3AD /* GRHViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F3626220DD0F200EFB3AD /* GRHViewModel.m */; };
+		1998C08A21A969E100D84BFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998C08921A969E100D84BFB /* AppDelegate.m */; };
+		1998C09821A969E200D84BFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998C09721A969E200D84BFB /* main.m */; };
+		19F21CFA21AEA12000C36688 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F21CF921AEA12000C36688 /* NotificationCenter.framework */; };
+		19F21CFE21AEA12000C36688 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F21CFD21AEA12000C36688 /* TodayViewController.m */; };
+		19F21D0121AEA12000C36688 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F21CFF21AEA12000C36688 /* MainInterface.storyboard */; };
+		19F21D0521AEA12000C36688 /* today-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 19F21CF821AEA12000C36688 /* today-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		19F28569220E6D0B00CAE610 /* GRHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F28568220E6D0B00CAE610 /* GRHTabBarController.m */; };
+		19F2856D220E759600CAE610 /* GRHDoubleTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2856C220E759600CAE610 /* GRHDoubleTitleView.m */; };
+		19F28570220E75E500CAE610 /* GRHLoadingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2856F220E75E500CAE610 /* GRHLoadingTitleView.m */; };
+		19F28574220E765300CAE610 /* GRHLoadingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F28573220E765300CAE610 /* GRHLoadingTitleView.xib */; };
+		19F28576220F12E100CAE610 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F28575220F12E100CAE610 /* ReactiveObjC.framework */; };
+		19F2857E2210733D00CAE610 /* GRHViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2857D2210733D00CAE610 /* GRHViewModelServicesImpl.m */; };
+		19F2858122107F4E00CAE610 /* GRHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2858022107F4E00CAE610 /* GRHUtil.m */; };
+		19F285842212583A00CAE610 /* SSKeychain+GRHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285832212583A00CAE610 /* SSKeychain+GRHUtil.m */; };
+		19F2858822127E5800CAE610 /* GRHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2858722127E5800CAE610 /* GRHNavigationController.m */; };
+		19F2858D2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2858C2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m */; };
+		19F285902212C94200CAE610 /* GRHWebServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2858F2212C94200CAE610 /* GRHWebServiceImpl.m */; };
+		19F285912212C94200CAE610 /* GRHWebServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F2858F2212C94200CAE610 /* GRHWebServiceImpl.m */; };
+		19F285942212CFD400CAE610 /* GRHLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285932212CFD400CAE610 /* GRHLoginViewModel.m */; };
+		19F285992212F09A00CAE610 /* GRHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285982212F09A00CAE610 /* GRHLoginViewController.m */; };
+		19F285A12213048100CAE610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F285A42213048100CAE610 /* Localizable.strings */; };
+		19F285A22213048100CAE610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F285A42213048100CAE610 /* Localizable.strings */; };
+		19F285AD2215A2A300CAE610 /* GRHHomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285AC2215A2A200CAE610 /* GRHHomepageViewController.m */; };
+		19F285B02215A2C800CAE610 /* GRHHomepageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285AF2215A2C800CAE610 /* GRHHomepageViewModel.m */; };
+		19F285B32215BE0C00CAE610 /* GRHPrepareViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285B22215BE0C00CAE610 /* GRHPrepareViewModel.m */; };
+		19F285B62215BE3100CAE610 /* GRHPrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285B52215BE3100CAE610 /* GRHPrepareViewController.m */; };
+		19F285BA2217982000CAE610 /* GRHHybridServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285B92217982000CAE610 /* GRHHybridServiceImpl.m */; };
+		19F285BD221807CF00CAE610 /* GRHLocalizedFilterProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285BC221807CF00CAE610 /* GRHLocalizedFilterProtocol.m */; };
+		19F285C022180A0900CAE610 /* GRHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285BF22180A0900CAE610 /* GRHWebViewController.m */; };
+		19F285C322180B2800CAE610 /* GRHWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F285C222180B2800CAE610 /* GRHWebViewModel.m */; };
+		991149FFFAA1144C31C2F29D /* Pods_HeraldApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EAFD1FFE631C9327AAFA82 /* Pods_HeraldApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19F21D0321AEA12000C36688 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1998C07D21A969E100D84BFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19F21CF721AEA12000C36688;
+			remoteInfo = "today-ext";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19F21D0921AEA12000C36688 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				19F21D0521AEA12000C36688 /* today-ext.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0F8EF41E539664979B91B7BB /* Pods_today_ext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_today_ext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1905AB6E221AA89D0095FA64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1905AB70221AEA980095FA64 /* GRHContentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHContentViewModel.h; sourceTree = "<group>"; };
+		1905AB71221AEA980095FA64 /* GRHContentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHContentViewModel.m; sourceTree = "<group>"; };
+		1905AB73221AEBB90095FA64 /* GRHContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHContentViewController.h; sourceTree = "<group>"; };
+		1905AB74221AEBB90095FA64 /* GRHContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHContentViewController.m; sourceTree = "<group>"; };
+		192B08BB22194A8800EC7494 /* GRHWKURLSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWKURLSchemeHandler.h; sourceTree = "<group>"; };
+		192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWKURLSchemeHandler.m; sourceTree = "<group>"; };
+		194F360C220D206B00EFB3AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		194F3612220D381600EFB3AD /* HeraldApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeraldApp-Prefix.pch"; sourceTree = "<group>"; };
+		194F361B220D38EA00EFB3AD /* GRHNavigationControllerStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHNavigationControllerStack.h; sourceTree = "<group>"; };
+		194F361C220D38EA00EFB3AD /* GRHNavigationControllerStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHNavigationControllerStack.m; sourceTree = "<group>"; };
+		194F361F220DCB8B00EFB3AD /* GRHRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHRouter.h; sourceTree = "<group>"; };
+		194F3620220DCB8B00EFB3AD /* GRHRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHRouter.m; sourceTree = "<group>"; };
+		194F3622220DD03500EFB3AD /* GRHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHViewController.h; sourceTree = "<group>"; };
+		194F3623220DD03500EFB3AD /* GRHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHViewController.m; sourceTree = "<group>"; };
+		194F3625220DD0F200EFB3AD /* GRHViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHViewModel.h; sourceTree = "<group>"; };
+		194F3626220DD0F200EFB3AD /* GRHViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHViewModel.m; sourceTree = "<group>"; };
+		1998C08521A969E100D84BFB /* HeraldApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeraldApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1998C08821A969E100D84BFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1998C08921A969E100D84BFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1998C09621A969E200D84BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1998C09721A969E200D84BFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19F21CF821AEA12000C36688 /* today-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "today-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F21CF921AEA12000C36688 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		19F21CFC21AEA12000C36688 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		19F21CFD21AEA12000C36688 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		19F21D0021AEA12000C36688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		19F21D0221AEA12000C36688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F21D0A21AEA22A00C36688 /* HeraldApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeraldApp.entitlements; sourceTree = "<group>"; };
+		19F28567220E6D0B00CAE610 /* GRHTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHTabBarController.h; sourceTree = "<group>"; };
+		19F28568220E6D0B00CAE610 /* GRHTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHTabBarController.m; sourceTree = "<group>"; };
+		19F2856B220E759600CAE610 /* GRHDoubleTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHDoubleTitleView.h; sourceTree = "<group>"; };
+		19F2856C220E759600CAE610 /* GRHDoubleTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHDoubleTitleView.m; sourceTree = "<group>"; };
+		19F2856E220E75E500CAE610 /* GRHLoadingTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHLoadingTitleView.h; sourceTree = "<group>"; };
+		19F2856F220E75E500CAE610 /* GRHLoadingTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHLoadingTitleView.m; sourceTree = "<group>"; };
+		19F28573220E765300CAE610 /* GRHLoadingTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRHLoadingTitleView.xib; sourceTree = "<group>"; };
+		19F28575220F12E100CAE610 /* ReactiveObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F28577220F160B00CAE610 /* GRHConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHConstant.h; sourceTree = "<group>"; };
+		19F2857A2210720F00CAE610 /* GRHNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHNavigationProtocol.h; sourceTree = "<group>"; };
+		19F2857B2210727300CAE610 /* GRHViewModelServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHViewModelServices.h; sourceTree = "<group>"; };
+		19F2857C2210733D00CAE610 /* GRHViewModelServicesImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHViewModelServicesImpl.h; sourceTree = "<group>"; };
+		19F2857D2210733D00CAE610 /* GRHViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHViewModelServicesImpl.m; sourceTree = "<group>"; };
+		19F2857F22107F4E00CAE610 /* GRHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHUtil.h; sourceTree = "<group>"; };
+		19F2858022107F4E00CAE610 /* GRHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHUtil.m; sourceTree = "<group>"; };
+		19F285822212583A00CAE610 /* SSKeychain+GRHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSKeychain+GRHUtil.h"; sourceTree = "<group>"; };
+		19F285832212583A00CAE610 /* SSKeychain+GRHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SSKeychain+GRHUtil.m"; sourceTree = "<group>"; };
+		19F285852212623300CAE610 /* GRHConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHConfig.h; sourceTree = "<group>"; };
+		19F2858622127E5800CAE610 /* GRHNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHNavigationController.h; sourceTree = "<group>"; };
+		19F2858722127E5800CAE610 /* GRHNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHNavigationController.m; sourceTree = "<group>"; };
+		19F285892212806300CAE610 /* GRHWebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWebService.h; sourceTree = "<group>"; };
+		19F2858B2212C78800CAE610 /* GRHViewControllerAnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHViewControllerAnimatedTransition.h; sourceTree = "<group>"; };
+		19F2858C2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHViewControllerAnimatedTransition.m; sourceTree = "<group>"; };
+		19F2858E2212C94200CAE610 /* GRHWebServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWebServiceImpl.h; sourceTree = "<group>"; };
+		19F2858F2212C94200CAE610 /* GRHWebServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWebServiceImpl.m; sourceTree = "<group>"; };
+		19F285922212CFD400CAE610 /* GRHLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHLoginViewModel.h; sourceTree = "<group>"; };
+		19F285932212CFD400CAE610 /* GRHLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHLoginViewModel.m; sourceTree = "<group>"; };
+		19F285952212DC8B00CAE610 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F285972212F09A00CAE610 /* GRHLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHLoginViewController.h; sourceTree = "<group>"; };
+		19F285982212F09A00CAE610 /* GRHLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHLoginViewController.m; sourceTree = "<group>"; };
+		19F2859D2213045100CAE610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		19F285A32213048100CAE610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		19F285A52213048200CAE610 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		19F285AB2215A2A200CAE610 /* GRHHomepageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHHomepageViewController.h; sourceTree = "<group>"; };
+		19F285AC2215A2A200CAE610 /* GRHHomepageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHHomepageViewController.m; sourceTree = "<group>"; };
+		19F285AE2215A2C800CAE610 /* GRHHomepageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHHomepageViewModel.h; sourceTree = "<group>"; };
+		19F285AF2215A2C800CAE610 /* GRHHomepageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHHomepageViewModel.m; sourceTree = "<group>"; };
+		19F285B12215BE0C00CAE610 /* GRHPrepareViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHPrepareViewModel.h; sourceTree = "<group>"; };
+		19F285B22215BE0C00CAE610 /* GRHPrepareViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHPrepareViewModel.m; sourceTree = "<group>"; };
+		19F285B42215BE3100CAE610 /* GRHPrepareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHPrepareViewController.h; sourceTree = "<group>"; };
+		19F285B52215BE3100CAE610 /* GRHPrepareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHPrepareViewController.m; sourceTree = "<group>"; };
+		19F285B7221672EE00CAE610 /* GRHHybridService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHHybridService.h; sourceTree = "<group>"; };
+		19F285B82217982000CAE610 /* GRHHybridServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHHybridServiceImpl.h; sourceTree = "<group>"; };
+		19F285B92217982000CAE610 /* GRHHybridServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHHybridServiceImpl.m; sourceTree = "<group>"; };
+		19F285BB221807CF00CAE610 /* GRHLocalizedFilterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHLocalizedFilterProtocol.h; sourceTree = "<group>"; };
+		19F285BC221807CF00CAE610 /* GRHLocalizedFilterProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHLocalizedFilterProtocol.m; sourceTree = "<group>"; };
+		19F285BE22180A0900CAE610 /* GRHWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWebViewController.h; sourceTree = "<group>"; };
+		19F285BF22180A0900CAE610 /* GRHWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWebViewController.m; sourceTree = "<group>"; };
+		19F285C122180B2800CAE610 /* GRHWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWebViewModel.h; sourceTree = "<group>"; };
+		19F285C222180B2800CAE610 /* GRHWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWebViewModel.m; sourceTree = "<group>"; };
+		9DD542A967D36800DD7F42E2 /* Pods-today-ext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-ext.release.xcconfig"; path = "Pods/Target Support Files/Pods-today-ext/Pods-today-ext.release.xcconfig"; sourceTree = "<group>"; };
+		A5EAFD1FFE631C9327AAFA82 /* Pods_HeraldApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeraldApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B006E159F39543984ED59F0D /* Pods-HeraldApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeraldApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeraldApp/Pods-HeraldApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D77CD1C7AF08FC8B71564A23 /* Pods-HeraldApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeraldApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeraldApp/Pods-HeraldApp.release.xcconfig"; sourceTree = "<group>"; };
+		E3C1F40E7CC5D1AA0016D265 /* Pods-today-ext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-ext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-today-ext/Pods-today-ext.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1998C08221A969E100D84BFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F28576220F12E100CAE610 /* ReactiveObjC.framework in Frameworks */,
+				991149FFFAA1144C31C2F29D /* Pods_HeraldApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F21CF521AEA12000C36688 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F21CFA21AEA12000C36688 /* NotificationCenter.framework in Frameworks */,
+				16493D5A8E871CAE1EF699F4 /* Pods_today_ext.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		194F360E220D2AAE00EFB3AD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				19F285A42213048100CAE610 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		194F360F220D2CED00EFB3AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19F2858A2212C4AD00CAE610 /* Transition */,
+				19F2856A220E756000CAE610 /* TitleView */,
+				194F3614220D384B00EFB3AD /* BaseClass */,
+				19F285972212F09A00CAE610 /* GRHLoginViewController.h */,
+				19F285982212F09A00CAE610 /* GRHLoginViewController.m */,
+				19F285AB2215A2A200CAE610 /* GRHHomepageViewController.h */,
+				19F285AC2215A2A200CAE610 /* GRHHomepageViewController.m */,
+				19F285B42215BE3100CAE610 /* GRHPrepareViewController.h */,
+				19F285B52215BE3100CAE610 /* GRHPrepareViewController.m */,
+				1905AB73221AEBB90095FA64 /* GRHContentViewController.h */,
+				1905AB74221AEBB90095FA64 /* GRHContentViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		194F3610220D2CF600EFB3AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				194F3613220D382C00EFB3AD /* BaseClass */,
+				19F285922212CFD400CAE610 /* GRHLoginViewModel.h */,
+				19F285932212CFD400CAE610 /* GRHLoginViewModel.m */,
+				19F285AE2215A2C800CAE610 /* GRHHomepageViewModel.h */,
+				19F285AF2215A2C800CAE610 /* GRHHomepageViewModel.m */,
+				19F285B12215BE0C00CAE610 /* GRHPrepareViewModel.h */,
+				19F285B22215BE0C00CAE610 /* GRHPrepareViewModel.m */,
+				1905AB70221AEA980095FA64 /* GRHContentViewModel.h */,
+				1905AB71221AEA980095FA64 /* GRHContentViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		194F3611220D2CFE00EFB3AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19F285892212806300CAE610 /* GRHWebService.h */,
+				19F2858E2212C94200CAE610 /* GRHWebServiceImpl.h */,
+				19F2858F2212C94200CAE610 /* GRHWebServiceImpl.m */,
+				19F285B7221672EE00CAE610 /* GRHHybridService.h */,
+				19F285B82217982000CAE610 /* GRHHybridServiceImpl.h */,
+				19F285B92217982000CAE610 /* GRHHybridServiceImpl.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		194F3613220D382C00EFB3AD /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				194F3625220DD0F200EFB3AD /* GRHViewModel.h */,
+				194F3626220DD0F200EFB3AD /* GRHViewModel.m */,
+				19F2857A2210720F00CAE610 /* GRHNavigationProtocol.h */,
+				19F2857B2210727300CAE610 /* GRHViewModelServices.h */,
+				19F2857C2210733D00CAE610 /* GRHViewModelServicesImpl.h */,
+				19F2857D2210733D00CAE610 /* GRHViewModelServicesImpl.m */,
+				19F285C122180B2800CAE610 /* GRHWebViewModel.h */,
+				19F285C222180B2800CAE610 /* GRHWebViewModel.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		194F3614220D384B00EFB3AD /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				194F361B220D38EA00EFB3AD /* GRHNavigationControllerStack.h */,
+				194F361C220D38EA00EFB3AD /* GRHNavigationControllerStack.m */,
+				194F3622220DD03500EFB3AD /* GRHViewController.h */,
+				194F3623220DD03500EFB3AD /* GRHViewController.m */,
+				19F28567220E6D0B00CAE610 /* GRHTabBarController.h */,
+				19F28568220E6D0B00CAE610 /* GRHTabBarController.m */,
+				19F2858622127E5800CAE610 /* GRHNavigationController.h */,
+				19F2858722127E5800CAE610 /* GRHNavigationController.m */,
+				19F285BE22180A0900CAE610 /* GRHWebViewController.h */,
+				19F285BF22180A0900CAE610 /* GRHWebViewController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		194F361E220DCB6400EFB3AD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				194F361F220DCB8B00EFB3AD /* GRHRouter.h */,
+				194F3620220DCB8B00EFB3AD /* GRHRouter.m */,
+				19F28577220F160B00CAE610 /* GRHConstant.h */,
+				19F2857F22107F4E00CAE610 /* GRHUtil.h */,
+				19F2858022107F4E00CAE610 /* GRHUtil.m */,
+				19F285822212583A00CAE610 /* SSKeychain+GRHUtil.h */,
+				19F285832212583A00CAE610 /* SSKeychain+GRHUtil.m */,
+				19F285852212623300CAE610 /* GRHConfig.h */,
+				19F285BB221807CF00CAE610 /* GRHLocalizedFilterProtocol.h */,
+				19F285BC221807CF00CAE610 /* GRHLocalizedFilterProtocol.m */,
+				192B08BB22194A8800EC7494 /* GRHWKURLSchemeHandler.h */,
+				192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		1998C07C21A969E100D84BFB = {
+			isa = PBXGroup;
+			children = (
+				1998C08721A969E100D84BFB /* HeraldApp */,
+				19F21CFB21AEA12000C36688 /* today-ext */,
+				1998C08621A969E100D84BFB /* Products */,
+				A6E46F60F126EBA910804FD4 /* Pods */,
+				84EB04AA19768D0D206356F4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1998C08621A969E100D84BFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1998C08521A969E100D84BFB /* HeraldApp.app */,
+				19F21CF821AEA12000C36688 /* today-ext.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1998C08721A969E100D84BFB /* HeraldApp */ = {
+			isa = PBXGroup;
+			children = (
+				1905AB6E221AA89D0095FA64 /* Assets.xcassets */,
+				194F361E220DCB6400EFB3AD /* Util */,
+				194F3611220D2CFE00EFB3AD /* Model */,
+				194F3610220D2CF600EFB3AD /* ViewModel */,
+				194F360F220D2CED00EFB3AD /* View */,
+				194F360E220D2AAE00EFB3AD /* Resource */,
+				19F21D0A21AEA22A00C36688 /* HeraldApp.entitlements */,
+				1998C08821A969E100D84BFB /* AppDelegate.h */,
+				1998C08921A969E100D84BFB /* AppDelegate.m */,
+				1998C09621A969E200D84BFB /* Info.plist */,
+				1998C09721A969E200D84BFB /* main.m */,
+				194F360C220D206B00EFB3AD /* LaunchScreen.xib */,
+				194F3612220D381600EFB3AD /* HeraldApp-Prefix.pch */,
+			);
+			path = HeraldApp;
+			sourceTree = "<group>";
+		};
+		19F21CFB21AEA12000C36688 /* today-ext */ = {
+			isa = PBXGroup;
+			children = (
+				19F21CFC21AEA12000C36688 /* TodayViewController.h */,
+				19F21CFD21AEA12000C36688 /* TodayViewController.m */,
+				19F21CFF21AEA12000C36688 /* MainInterface.storyboard */,
+				19F21D0221AEA12000C36688 /* Info.plist */,
+			);
+			path = "today-ext";
+			sourceTree = "<group>";
+		};
+		19F2856A220E756000CAE610 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				19F28573220E765300CAE610 /* GRHLoadingTitleView.xib */,
+				19F2856B220E759600CAE610 /* GRHDoubleTitleView.h */,
+				19F2856C220E759600CAE610 /* GRHDoubleTitleView.m */,
+				19F2856E220E75E500CAE610 /* GRHLoadingTitleView.h */,
+				19F2856F220E75E500CAE610 /* GRHLoadingTitleView.m */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
+		19F2858A2212C4AD00CAE610 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				19F2858B2212C78800CAE610 /* GRHViewControllerAnimatedTransition.h */,
+				19F2858C2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		84EB04AA19768D0D206356F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19F285952212DC8B00CAE610 /* Reachability.framework */,
+				19F28575220F12E100CAE610 /* ReactiveObjC.framework */,
+				19F21CF921AEA12000C36688 /* NotificationCenter.framework */,
+				A5EAFD1FFE631C9327AAFA82 /* Pods_HeraldApp.framework */,
+				0F8EF41E539664979B91B7BB /* Pods_today_ext.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6E46F60F126EBA910804FD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B006E159F39543984ED59F0D /* Pods-HeraldApp.debug.xcconfig */,
+				D77CD1C7AF08FC8B71564A23 /* Pods-HeraldApp.release.xcconfig */,
+				E3C1F40E7CC5D1AA0016D265 /* Pods-today-ext.debug.xcconfig */,
+				9DD542A967D36800DD7F42E2 /* Pods-today-ext.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1998C08421A969E100D84BFB /* HeraldApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1998C09B21A969E200D84BFB /* Build configuration list for PBXNativeTarget "HeraldApp" */;
+			buildPhases = (
+				25D96A52229AF327E4DF467B /* [CP] Check Pods Manifest.lock */,
+				1998C08121A969E100D84BFB /* Sources */,
+				1998C08221A969E100D84BFB /* Frameworks */,
+				1998C08321A969E100D84BFB /* Resources */,
+				19F21D0921AEA12000C36688 /* Embed App Extensions */,
+				073DA2D699C471A5BE00246F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19F21D0421AEA12000C36688 /* PBXTargetDependency */,
+			);
+			name = HeraldApp;
+			productName = HeraldApp;
+			productReference = 1998C08521A969E100D84BFB /* HeraldApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19F21CF721AEA12000C36688 /* today-ext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19F21D0621AEA12000C36688 /* Build configuration list for PBXNativeTarget "today-ext" */;
+			buildPhases = (
+				6ED5DB5593053620AD908AAE /* [CP] Check Pods Manifest.lock */,
+				19F21CF421AEA12000C36688 /* Sources */,
+				19F21CF521AEA12000C36688 /* Frameworks */,
+				19F21CF621AEA12000C36688 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "today-ext";
+			productName = "today-ext";
+			productReference = 19F21CF821AEA12000C36688 /* today-ext.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1998C07D21A969E100D84BFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Herald Studio";
+				TargetAttributes = {
+					1998C08421A969E100D84BFB = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					19F21CF721AEA12000C36688 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 1998C08021A969E100D84BFB /* Build configuration list for PBXProject "HeraldApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1998C07C21A969E100D84BFB;
+			productRefGroup = 1998C08621A969E100D84BFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1998C08421A969E100D84BFB /* HeraldApp */,
+				19F21CF721AEA12000C36688 /* today-ext */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1998C08321A969E100D84BFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				194F360D220D206B00EFB3AD /* LaunchScreen.xib in Resources */,
+				19F285A12213048100CAE610 /* Localizable.strings in Resources */,
+				1905AB6F221AA89D0095FA64 /* Assets.xcassets in Resources */,
+				19F28574220E765300CAE610 /* GRHLoadingTitleView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F21CF621AEA12000C36688 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F21D0121AEA12000C36688 /* MainInterface.storyboard in Resources */,
+				19F285A22213048100CAE610 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		073DA2D699C471A5BE00246F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeraldApp/Pods-HeraldApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking-iOS9.0/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry-iOS9.0/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability-iOS9.0/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS9.0/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain-iOS9.0/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+				"${BUILT_PRODUCTS_DIR}/WXTabBarController/WXTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking-iOS12.1/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry-iOS12.1/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability-iOS12.1/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS12.1/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain-iOS12.1/SSKeychain.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WXTabBarController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeraldApp/Pods-HeraldApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25D96A52229AF327E4DF467B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeraldApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ED5DB5593053620AD908AAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-today-ext-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1998C08121A969E100D84BFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F2856D220E759600CAE610 /* GRHDoubleTitleView.m in Sources */,
+				19F28570220E75E500CAE610 /* GRHLoadingTitleView.m in Sources */,
+				19F285902212C94200CAE610 /* GRHWebServiceImpl.m in Sources */,
+				194F3621220DCB8B00EFB3AD /* GRHRouter.m in Sources */,
+				1905AB75221AEBB90095FA64 /* GRHContentViewController.m in Sources */,
+				19F285B32215BE0C00CAE610 /* GRHPrepareViewModel.m in Sources */,
+				19F285942212CFD400CAE610 /* GRHLoginViewModel.m in Sources */,
+				1998C09821A969E200D84BFB /* main.m in Sources */,
+				19F285BD221807CF00CAE610 /* GRHLocalizedFilterProtocol.m in Sources */,
+				19F285BA2217982000CAE610 /* GRHHybridServiceImpl.m in Sources */,
+				192B08BD22194A8800EC7494 /* GRHWKURLSchemeHandler.m in Sources */,
+				19F2858822127E5800CAE610 /* GRHNavigationController.m in Sources */,
+				19F2857E2210733D00CAE610 /* GRHViewModelServicesImpl.m in Sources */,
+				19F2858D2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m in Sources */,
+				194F3627220DD0F200EFB3AD /* GRHViewModel.m in Sources */,
+				19F2858122107F4E00CAE610 /* GRHUtil.m in Sources */,
+				19F285842212583A00CAE610 /* SSKeychain+GRHUtil.m in Sources */,
+				1905AB72221AEA980095FA64 /* GRHContentViewModel.m in Sources */,
+				19F285C322180B2800CAE610 /* GRHWebViewModel.m in Sources */,
+				194F361D220D38EA00EFB3AD /* GRHNavigationControllerStack.m in Sources */,
+				19F28569220E6D0B00CAE610 /* GRHTabBarController.m in Sources */,
+				19F285AD2215A2A300CAE610 /* GRHHomepageViewController.m in Sources */,
+				19F285B62215BE3100CAE610 /* GRHPrepareViewController.m in Sources */,
+				1998C08A21A969E100D84BFB /* AppDelegate.m in Sources */,
+				194F3624220DD03500EFB3AD /* GRHViewController.m in Sources */,
+				19F285992212F09A00CAE610 /* GRHLoginViewController.m in Sources */,
+				19F285B02215A2C800CAE610 /* GRHHomepageViewModel.m in Sources */,
+				19F285C022180A0900CAE610 /* GRHWebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F21CF421AEA12000C36688 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F285912212C94200CAE610 /* GRHWebServiceImpl.m in Sources */,
+				19F21CFE21AEA12000C36688 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19F21D0421AEA12000C36688 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19F21CF721AEA12000C36688 /* today-ext */;
+			targetProxy = 19F21D0321AEA12000C36688 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19F21CFF21AEA12000C36688 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19F21D0021AEA12000C36688 /* Base */,
+				19F2859D2213045100CAE610 /* zh-Hans */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		19F285A42213048100CAE610 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19F285A32213048100CAE610 /* zh-Hans */,
+				19F285A52213048200CAE610 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1998C09921A969E200D84BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeraldApp/HeraldApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1998C09A21A969E200D84BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeraldApp/HeraldApp-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1998C09C21A969E200D84BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B006E159F39543984ED59F0D /* Pods-HeraldApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeraldApp/HeraldApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YSN7CN448;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				INFOPLIST_FILE = HeraldApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.myseu.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1998C09D21A969E200D84BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77CD1C7AF08FC8B71564A23 /* Pods-HeraldApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeraldApp/HeraldApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YSN7CN448;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = HeraldApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.myseu.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		19F21D0721AEA12000C36688 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C1F40E7CC5D1AA0016D265 /* Pods-today-ext.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YSN7CN448;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeraldApp/HeraldApp-Prefix.pch";
+				INFOPLIST_FILE = "today-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.myseu.ios.today-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19F21D0821AEA12000C36688 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD542A967D36800DD7F42E2 /* Pods-today-ext.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YSN7CN448;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeraldApp/HeraldApp-Prefix.pch";
+				INFOPLIST_FILE = "today-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.myseu.ios.today-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1998C08021A969E100D84BFB /* Build configuration list for PBXProject "HeraldApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1998C09921A969E200D84BFB /* Debug */,
+				1998C09A21A969E200D84BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1998C09B21A969E200D84BFB /* Build configuration list for PBXNativeTarget "HeraldApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1998C09C21A969E200D84BFB /* Debug */,
+				1998C09D21A969E200D84BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19F21D0621AEA12000C36688 /* Build configuration list for PBXNativeTarget "today-ext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19F21D0721AEA12000C36688 /* Debug */,
+				19F21D0821AEA12000C36688 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1998C07D21A969E100D84BFB /* Project object */;
+}

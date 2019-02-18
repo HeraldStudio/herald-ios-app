@@ -1,0 +1,9 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking-iOS12.1" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry-iOS12.1" "${PODS_CONFIGURATION_BUILD_DIR}/Reachability-iOS12.1" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC-iOS12.1" "${PODS_CONFIGURATION_BUILD_DIR}/SSKeychain-iOS12.1"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking-iOS12.1/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Masonry-iOS12.1/Masonry.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Reachability-iOS12.1/Reachability.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC-iOS12.1/ReactiveObjC.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SSKeychain-iOS12.1/SSKeychain.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "Masonry" -framework "Reachability" -framework "ReactiveObjC" -framework "SSKeychain"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

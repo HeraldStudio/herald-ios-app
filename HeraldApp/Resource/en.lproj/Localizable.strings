@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  HeraldApp
+
+  Created by Wolf-Tungsten on 2019/2/12.
+  Copyright © 2019 Herald Studio. All rights reserved.
+*/
+
+"LoginView_cardnumPlaceHolder" = "Card number";
+"LoginView_passwordPlaceHolder" = "Unified authentication password";
+"LoginView_loginButtonTitle" = "Login";
+"LoginView_description" = "This app uses the industry-recognized standards to encrypt all your private data, using a unified authentication password that you only know and a session identifier (token) saved only by your device as the key to decrypt the data.";
+"LoginView_copyright" = "Copyright©2001-2019 Herald Studio. All Rights Reserved";
+
+

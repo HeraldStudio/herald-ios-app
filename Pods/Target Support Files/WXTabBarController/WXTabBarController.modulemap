@@ -1,0 +1,6 @@
+framework module WXTabBarController {
+  umbrella header "WXTabBarController-umbrella.h"
+
+  export *
+  module * { export * }
+}
