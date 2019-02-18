@@ -1,6 +1,52 @@
 # 小猴偷米 iOS App 第二版
 
-产品代号 herald-ios-v2
+基于 Hybrid App 思想开发的小猴偷米 iOS App
+
+## 开发风格
+
+* Objective-C 
+
+  Swift 更新太快了，为了避免重蹈第一版的覆辙，这次我们用OjbC👌
+
+* MVVM 模式
+
+  使用 ReactiveObjC 作为根本实现的MVVM模式，大规模借鉴：https://github.com/leichunfeng/MVVMReactiveCocoa
+
+  **不建议🙅**新手直接去看 ReactiveObjC 的任何教程和文档，容易影响积极性；
+
+  **建议🙋‍♂️**认真阅读 `GRHViewModel` / `GRHViewController` 等基类，以 **登录界面** 为例分析代码（`GRHLoginViewModel` / `GRHLoginViewController` / `GRHWebServiceImpl`）然后在实践中体会MVVM模式的实现方式 
+
+* 使用 Masonary 实现 AutoLayout 的纯代码布局
+
+* 离线包
+
+  为了高端大气上档次，项目中称所有 WebView 内容为 Hybrid 内核
+
+  为了提高加载速度，使用离线包方式加载 Hybrid 内核，但是离线包模式仅支持 iOS 11 及以上系统（截止2019年1月 App Store 统计 满足该要求的用户已达到 95%），对于无法支持离线包（的5%迂腐）的用户，将通过 CDN 进行加载。
+
+## 开始开发
+
+1. 确保已经正确安装 Cocoapods
+2. 使用 Cocoapods 补全依赖 `pod install`
+3. 搭建 Hybrid 内核测试服务 （参见：https://github.com/HeraldStudio/herald-hybrid-web-kernel）
+
+## 调试
+
+`GRHConfig.h` 中：
+
+```objective-c
+///-----------
+/// Hybrid
+///-----------
+
+#define GRH_HYBRID_BASEURL @"http://192.168.1.102:8080/"
+#define GRH_HYBRID_DEBUG YES
+```
+
+`GRH_HYBRID_DEBUG` 字段为 `YES` 时，Hybrid 内核从 `GRH_HYBRID_BASEURL` 加载；否则从 `GRH_HYBRID_BASEURL` 下载离线包到本地，然后使用离线包渲染。
+
+无论何种加载方式，Hybrid 内核的入口点为 `index.html` 。
+
 
 ## 应用启动流程
 
@@ -17,9 +63,31 @@ AppDelegate.m
 }
 ```
 
-通过 token 是否存在判断用户是否登录，未登录则跳转登录页面
+通过 token 是否存在判断用户是否登录，未登录则跳转登录页面，存在登录信息则跳转至 Prepare 页面。
 
+GRHPrepareViewModel.m
 
+```objective-c
+ if(GRH_HYBRID_DEBUG){
+        // 如果配置为调试模式则跳过下载离线包
+        self.startAnimation = @(YES);
+    } else {
+        [self.services.hybridService.fetchLocalizedFileList subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@", x);
+            RACSignal *updateTask = [self.services.hybridService updateOfflinePackage:x[@"packageName"]];
+            [updateTask subscribeNext:^(id  _Nullable y) {
+                NSLog(@"下载完成");
+                self.startAnimation = @(YES);
+            } error:^(NSError * _Nullable error) {
+                NSLog(@"下载出错%@", error);
+            }];
+        }];
+    }
+```
+
+获取最新的离线包信息 `info.json` ，并更新离线包。需要注意的是调用 `self.services.hybridService updateOfflinePackage:` 时传入最新线上离线包的名称，然后会判断是否本地已有该离线包，已有则不会重复下载。
+
+离线包更新完成后即设置`self.startAnimation` 为 YES，产生进场动画效果，加载 `GRHHomepageViewModel`。
 
 ## 封装的方法
 
