@@ -9,10 +9,14 @@
 #import "GRHLoginViewModel.h"
 #import "GRHPrepareViewModel.h"
 #import "SSKeychain+GRHUtil.h"
+#import "GRHOAuthWebViewModel.h"
 @interface GRHLoginViewModel ()
 
 @property (nonatomic, strong, readwrite) RACSignal *validLoginSignal;
 @property (nonatomic, strong, readwrite) RACCommand *loginCommand;
+@property (nonatomic, strong, readwrite) NSString *verifyURL;
+@property (nonatomic, strong, readwrite) RACSignal *needOAuth;
+@property (nonatomic, strong, readwrite) RACCommand *oauthCommand;
 
 @end
 
@@ -27,6 +31,8 @@
                                   return @(cardnum.length == 9 && password.length > 0 && !([showLoading boolValue]));
                               }]
                              distinctUntilChanged];
+    self.needOAuth = RACObserve(self, verifyURL);
+    
     @weakify(self)
     self.loginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
@@ -47,11 +53,17 @@
                 [self.services resetRootViewModel:[[GRHPrepareViewModel alloc] initWithServices:self.services params:nil]];
             } else if ([authResult[@"code"] isEqualToNumber:@(303)]){
                 // TODO: 需要页面认证
+                self.verifyURL = authResult[@"result"][@"verifyUrl"];
             }
         } error:^(NSError * _Nullable error) {
             self.showLoading = @(YES);
             self.toastText = @"登录过程出错,请重试";
         }];
+        return [RACSignal empty];
+    }];
+    
+    self.oauthCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        [self.services resetRootViewModel:[[GRHOAuthWebViewModel alloc] initWithServices:self.services params:@{@"OAuthURL":self.verifyURL,@"title":@"安全验证",@"subtitle":@"统一身份认证"}]];
         return [RACSignal empty];
     }];
     

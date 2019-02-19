@@ -46,12 +46,28 @@
         [self.services pushViewModel:newVM animated:YES];
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"logout"]){
         [self logout];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"openURL"]){
+        NSURL *targetURL = [NSURL URLWithString:message.body[@"url"]];
+        if([(NSNumber *)message.body[@"inApp"] boolValue]){
+            //TODO
+        } else {
+            [[UIApplication sharedApplication] openURL:targetURL];  
+        }
     }
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"加载完毕");
     [self evalJS:@"setInterval(function(){console.log('inject Success')}, 1000)"];
+}
+
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
+{
+    // 如果是在新页面中打开则直接打开浏览器？
+    if (navigationAction.targetFrame == nil) {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 @end

@@ -24,7 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 判断一卡通和密码输入是否合法
 @property (nonatomic, strong, readonly) RACSignal *validLoginSignal;
 
+// 页面认证URL
+@property (nonatomic, strong, readonly) NSString *verifyURL;
+@property (nonatomic, strong, readonly) RACSignal *needOAuth;
+@property (nonatomic, strong, readonly) RACCommand *oauthCommand;
+
 @property (nonatomic, strong, readonly) RACCommand *loginCommand;
+
 
 @end
 

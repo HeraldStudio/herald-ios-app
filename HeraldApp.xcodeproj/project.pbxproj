@@ -19,6 +19,9 @@
 		194F3627220DD0F200EFB3AD /* GRHViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F3626220DD0F200EFB3AD /* GRHViewModel.m */; };
 		1998C08A21A969E100D84BFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998C08921A969E100D84BFB /* AppDelegate.m */; };
 		1998C09821A969E200D84BFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998C09721A969E200D84BFB /* main.m */; };
+		19A4671A221C475A00BFED72 /* GRHOAuthWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A46719221C475A00BFED72 /* GRHOAuthWebViewModel.m */; };
+		19A4671D221C47BF00BFED72 /* GRHOAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A4671C221C47BF00BFED72 /* GRHOAuthWebViewController.m */; };
+		19A46721221C58B300BFED72 /* 标准icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 19A46720221C58B300BFED72 /* 标准icon.icns */; };
 		19F21CFA21AEA12000C36688 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F21CF921AEA12000C36688 /* NotificationCenter.framework */; };
 		19F21CFE21AEA12000C36688 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F21CFD21AEA12000C36688 /* TodayViewController.m */; };
 		19F21D0121AEA12000C36688 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F21CFF21AEA12000C36688 /* MainInterface.storyboard */; };
@@ -98,6 +101,11 @@
 		1998C08921A969E100D84BFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1998C09621A969E200D84BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1998C09721A969E200D84BFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19A46718221C475A00BFED72 /* GRHOAuthWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHOAuthWebViewModel.h; sourceTree = "<group>"; };
+		19A46719221C475A00BFED72 /* GRHOAuthWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHOAuthWebViewModel.m; sourceTree = "<group>"; };
+		19A4671B221C47BF00BFED72 /* GRHOAuthWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHOAuthWebViewController.h; sourceTree = "<group>"; };
+		19A4671C221C47BF00BFED72 /* GRHOAuthWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHOAuthWebViewController.m; sourceTree = "<group>"; };
+		19A46720221C58B300BFED72 /* 标准icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "标准icon.icns"; sourceTree = "<group>"; };
 		19F21CF821AEA12000C36688 /* today-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "today-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F21CF921AEA12000C36688 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		19F21CFC21AEA12000C36688 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -206,6 +214,8 @@
 				19F285B52215BE3100CAE610 /* GRHPrepareViewController.m */,
 				1905AB73221AEBB90095FA64 /* GRHContentViewController.h */,
 				1905AB74221AEBB90095FA64 /* GRHContentViewController.m */,
+				19A4671B221C47BF00BFED72 /* GRHOAuthWebViewController.h */,
+				19A4671C221C47BF00BFED72 /* GRHOAuthWebViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 				19F285B22215BE0C00CAE610 /* GRHPrepareViewModel.m */,
 				1905AB70221AEA980095FA64 /* GRHContentViewModel.h */,
 				1905AB71221AEA980095FA64 /* GRHContentViewModel.m */,
+				19A46718221C475A00BFED72 /* GRHOAuthWebViewModel.h */,
+				19A46719221C475A00BFED72 /* GRHOAuthWebViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -313,6 +325,7 @@
 		1998C08721A969E100D84BFB /* HeraldApp */ = {
 			isa = PBXGroup;
 			children = (
+				19A46720221C58B300BFED72 /* 标准icon.icns */,
 				1905AB6E221AA89D0095FA64 /* Assets.xcassets */,
 				194F361E220DCB6400EFB3AD /* Util */,
 				194F3611220D2CFE00EFB3AD /* Model */,
@@ -476,6 +489,7 @@
 				194F360D220D206B00EFB3AD /* LaunchScreen.xib in Resources */,
 				19F285A12213048100CAE610 /* Localizable.strings in Resources */,
 				1905AB6F221AA89D0095FA64 /* Assets.xcassets in Resources */,
+				19A46721221C58B300BFED72 /* 标准icon.icns in Resources */,
 				19F28574220E765300CAE610 /* GRHLoadingTitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,12 +599,14 @@
 				19F285942212CFD400CAE610 /* GRHLoginViewModel.m in Sources */,
 				1998C09821A969E200D84BFB /* main.m in Sources */,
 				19F285BD221807CF00CAE610 /* GRHLocalizedFilterProtocol.m in Sources */,
+				19A4671D221C47BF00BFED72 /* GRHOAuthWebViewController.m in Sources */,
 				19F285BA2217982000CAE610 /* GRHHybridServiceImpl.m in Sources */,
 				192B08BD22194A8800EC7494 /* GRHWKURLSchemeHandler.m in Sources */,
 				19F2858822127E5800CAE610 /* GRHNavigationController.m in Sources */,
 				19F2857E2210733D00CAE610 /* GRHViewModelServicesImpl.m in Sources */,
 				19F2858D2212C78800CAE610 /* GRHViewControllerAnimatedTransition.m in Sources */,
 				194F3627220DD0F200EFB3AD /* GRHViewModel.m in Sources */,
+				19A4671A221C475A00BFED72 /* GRHOAuthWebViewModel.m in Sources */,
 				19F2858122107F4E00CAE610 /* GRHUtil.m in Sources */,
 				19F285842212583A00CAE610 /* SSKeychain+GRHUtil.m in Sources */,
 				1905AB72221AEA980095FA64 /* GRHContentViewModel.m in Sources */,

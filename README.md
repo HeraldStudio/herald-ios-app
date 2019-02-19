@@ -190,12 +190,13 @@ cardnumTextField.leftViewMode = UITextFieldViewModeAlways;
 
 ## 开发进程
 
-[ ] -  user信息注入
+* [x] user信息注入
 
-[ ] -  登录失效跳转登录界面
+* [x] 登录失效跳转登录界面
 
-[ ] - OAuth 页面
+* [ ] OAuth 页面
 
-[ ] - 非内置 WebView 页面 （不带缓存和鉴权）
+* [ ] 非内置 WebView 页面 （不带缓存和鉴权）
 
-[ ] - 通知页打不开的问题
+* [x] 通知页打不开的问题
+

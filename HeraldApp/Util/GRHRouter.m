@@ -39,7 +39,8 @@
              @"GRHLoginViewModel": @"GRHLoginViewController",
              @"GRHHomepageViewModel": @"GRHHomepageViewController",
              @"GRHPrepareViewModel": @"GRHPrepareViewController",
-             @"GRHContentViewModel": @"GRHContentViewController"
+             @"GRHContentViewModel": @"GRHContentViewController",
+             @"GRHOAuthWebViewModel": @"GRHOAuthWebViewController"
              };
 }
 

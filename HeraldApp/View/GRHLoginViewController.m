@@ -75,9 +75,22 @@
     
     UILabel *descriptionTextView = [[UILabel alloc] init];
     self.descriptionTextView = descriptionTextView;
-    descriptionTextView.text = NSLocalizedString(@"LoginView_description", @"LoginView_description");
+    
+    NSMutableParagraphStyle   *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:4];//行间距
+    paragraphStyle.alignment = NSTextAlignmentJustified;//文本对齐方式 左右对齐（两边对齐）
+    
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"LoginView_description", @"LoginView_description")];
+    
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [NSLocalizedString(@"LoginView_description", @"LoginView_description") length])];//设置段落样式
+    
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13.0] range:NSMakeRange(0, [NSLocalizedString(@"LoginView_description", @"LoginView_description") length])];//设置字体大小
+    
+    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleNone] range:NSMakeRange(0, [NSLocalizedString(@"LoginView_description", @"LoginView_description") length])];//这段话必须要添加，否则UIlabel两边对齐无效 NSUnderlineStyleAttributeName （设置下划线）
+    
+    descriptionTextView.attributedText = attributedString;
     descriptionTextView.numberOfLines = 0;
-    descriptionTextView.textColor = HexRGB(0x888888);
+    descriptionTextView.textColor = HexRGB(0xA0A0A0);
     descriptionTextView.font = [UIFont systemFontOfSize:15];
     [descriptionTextView sizeToFit];
     
@@ -201,6 +214,17 @@
          
          [self.viewModel.loginCommand execute:nil];
      }];
+    
+    [self.viewModel.needOAuth subscribeNext:^(id  _Nullable x) {
+        if(x != nil) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码输入错误次数过多，本次登录需要额外验证过程；请通过统一身份认证验证后再次尝试登录。" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"前往验证" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.viewModel.verifyURL]];
+            }]];
+            // 弹出对话框
+            [self presentViewController:alert animated:true completion:nil];
+        }
+    }];
     
 }
 
