@@ -56,7 +56,7 @@
     return [[RACSignal
              createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                  
-                 NSURLSessionDataTask *task = [self.session POST:@"api/user" parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+                 NSURLSessionDataTask *task = [self.session GET:@"api/user" parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
                      
                  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                      [subscriber sendNext:responseObject];

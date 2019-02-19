@@ -148,4 +148,6 @@ typedef id   (^IDBlock_id)  (id);
 #define GRH_LEFT_IMAGE_SIZE CGSizeMake(25, 25)
 #define GRH_1PX_WIDTH (1 / [UIScreen mainScreen].scale)
 
+#define grhUserDefaults [NSUserDefaults standardUserDefaults]
+
 #endif /* GRHConstant_h */

@@ -8,6 +8,7 @@
 
 #import "GRHViewModel.h"
 #import "GRHViewModelServices.h"
+#import "GRHLoginViewModel.h"
 #import "SSKeychain+GRHUtil.h"
 @interface GRHViewModel ()
 
@@ -69,7 +70,15 @@
     if([(NSNumber *)responseObject[@"code"] isEqual:@(401)]){
         // 如果出现401错误
         self.toastText = @"身份认证过期，请重新登录"; // 给出用户提示
+        [self logout];
     }
 }
 
+- (void)logout{
+    [SSKeychain deleteToken];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:GRH_USERINFO_DEFUALTS];
+    GRHLoginViewModel *loginViewModel = [[GRHLoginViewModel alloc] initWithServices:self.services params:nil];
+    [self.services resetRootViewModel:loginViewModel]; // 返回登录页面重新登录
+}
 @end

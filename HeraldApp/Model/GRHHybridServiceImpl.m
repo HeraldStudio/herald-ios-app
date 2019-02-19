@@ -42,13 +42,13 @@
                      
                  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                      NSData *fileListData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
-                     [defaults setObject:fileListData forKey:@"hybridService-fileList"];
+                     [defaults setObject:fileListData forKey:GRH_HYBRID_PACKAGE_INFO_DEFAULTS];
                      [subscriber sendNext:responseObject];
                      [subscriber sendCompleted];
                  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                      // 从网络获取出错则尝试从本地获取
                      NSLog(@"获取离线包信息过程中出现网络错误，使用本地数据");
-                     NSData *fileListData = [defaults objectForKey:@"hybridService-fileList"];
+                     NSData *fileListData = [defaults objectForKey:GRH_HYBRID_PACKAGE_INFO_DEFAULTS];
                      id responseObject = nil;
                      
                      if(fileListData != nil) {

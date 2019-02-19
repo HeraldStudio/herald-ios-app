@@ -44,6 +44,8 @@
     if([(NSString *)message.body[@"action"] isEqualToString:@"navigate"]){
         GRHContentViewModel *newVM = [[GRHContentViewModel alloc] initWithServices:self.services params:@{@"title":message.body[@"name"],@"path":message.body[@"path"]}];
         [self.services pushViewModel:newVM animated:YES];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"logout"]){
+        [self logout];
     }
 }
 

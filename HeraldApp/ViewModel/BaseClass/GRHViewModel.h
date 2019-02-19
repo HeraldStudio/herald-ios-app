@@ -67,6 +67,8 @@ typedef NS_ENUM(NSUInteger, GRHTitleViewType) {
 
 - (void)check401:(id)responseObject;
 
+- (void)logout;
+
 @end
 
 

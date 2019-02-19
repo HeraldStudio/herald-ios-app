@@ -27,4 +27,10 @@
 #define GRH_HYBRID_BASEURL @"http://192.168.1.102:8080/"
 #define GRH_HYBRID_DEBUG YES
 
+///-----------
+/// UserDefualts
+///-----------
+
+#define GRH_USERINFO_DEFUALTS @"herald-userInfo"
+#define GRH_HYBRID_PACKAGE_INFO_DEFAULTS @"hybridService-fileList"
 #endif /* GRHConfig_h */

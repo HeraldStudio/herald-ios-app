@@ -29,8 +29,12 @@
     WKUserContentController *userContentController = [[WKUserContentController alloc] init];
     // 注册ViewModel为JS方法回调对象
     [userContentController addScriptMessageHandler:self.viewModel name:@"heraldAppBridge"];
-    // 注入token注入脚本
-    NSString *injectTokenUserScriptSource = [NSString stringWithFormat:@"window.token='%@\';", self.viewModel.token];
+    // 注入token/user
+    NSError *parseError = nil;
+    NSDictionary *userDict = [grhUserDefaults objectForKey:GRH_USERINFO_DEFUALTS];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userDict options:NSJSONWritingPrettyPrinted error:&parseError];
+    NSString *userInfo = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSString *injectTokenUserScriptSource = [NSString stringWithFormat:@"window.token='%@'; window.userInfo=%@;", self.viewModel.token, userInfo];
     WKUserScript *injectTokenUserScript = [[WKUserScript alloc] initWithSource:injectTokenUserScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];
     [userContentController addUserScript:injectTokenUserScript];
     webViewConfiguration.userContentController = userContentController;
