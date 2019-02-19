@@ -187,3 +187,15 @@ cardnumTextField.leftViewMode = UITextFieldViewModeAlways;
 ​	`-(void)check401:(id) responseObject` 
 
 方法。对于从`GRHWebServiceImpl`中获取的请求结果可以使用该方法进行验证，当产生401时会跳转到登录页面。
+
+## 开发进程
+
+[ ] -  user信息注入
+
+[ ] -  登录失效跳转登录界面
+
+[ ] - OAuth 页面
+
+[ ] - 非内置 WebView 页面 （不带缓存和鉴权）
+
+[ ] - 通知页打不开的问题
