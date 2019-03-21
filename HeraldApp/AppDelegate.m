@@ -14,6 +14,8 @@
 #import "SSKeychain+GRHUtil.h"
 #import "GRHUtil.h"
 #import "AFNetworking.h"
+#import <UserNotifications/UserNotifications.h>
+
 
 @interface AppDelegate ()
 @property (nonatomic, strong) GRHViewModelServicesImpl *services;
@@ -40,7 +42,18 @@
     [self.services resetRootViewModel:[self createInitialViewModel]];
     [self.window makeKeyAndVisible];
     [self configureAppearance];
-
+    
+    // 请求推送通知
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:                                           (UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              }];
+    } else {
+        // iOS 10 以下就不通知了。
+    }
+    
+    
     return YES;
 }
 

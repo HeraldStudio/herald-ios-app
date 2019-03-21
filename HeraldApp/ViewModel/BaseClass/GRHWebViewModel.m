@@ -11,6 +11,8 @@
 #import "SSKeychain+GRHUtil.h"
 #import "GRHLoginViewModel.h"
 #import "GRHContentViewModel.h"
+#import <UserNotifications/UserNotifications.h>
+
 
 @interface GRHWebViewModel()
 
@@ -59,6 +61,7 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"加载完毕");
     [self evalJS:@"setInterval(function(){console.log('inject Success')}, 1000)"];
+    [self didFinshLoadingInject];
 }
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
@@ -68,6 +71,51 @@
         [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
     }
     decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+-(void)setLocalNotificationWithTitle:(NSString *)title body:(NSString *)body at:(NSNumber *)timestamp type:(NSString *)type{
+    if (@available(iOS 10.0, *)) {
+        // 设置通知的标题和内容
+        UNMutableNotificationContent *notificationContent = [[UNMutableNotificationContent alloc] init];
+        notificationContent.title = title;
+        notificationContent.body = body;
+        
+        // 根据设置通知的时间
+        NSDate *notificationTime = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSUInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+        NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:notificationTime];
+        UNCalendarNotificationTrigger* trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateComponent repeats:NO];
+        
+        NSString *uuid = [[NSUUID UUID] UUIDString];
+        NSString *identifier = [NSString stringWithFormat:@"%@-%@", type, uuid];
+        UNNotificationRequest *notificationRequest = [UNNotificationRequest requestWithIdentifier:identifier content:notificationContent trigger:trigger];
+        UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+        
+        [notificationCenter addNotificationRequest:notificationRequest withCompletionHandler:NULL];
+    }
+}
+
+-(void)clearLocalNotificationsOfType:(NSString *)type{
+    if (@available(iOS 10.0, *)) {
+        // 设置通知的标题和内容
+        
+        UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+        
+        [notificationCenter getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+            
+            for(UNNotificationRequest *request in requests){
+                if([request.identifier containsString:type]){
+                    [notificationCenter removePendingNotificationRequestsWithIdentifiers:@[request.identifier]];
+                }
+            }
+        }];
+    }
+}
+
+-(void)didFinshLoadingInject {
+    // 加载完成后的注入动作
+    
 }
 
 @end

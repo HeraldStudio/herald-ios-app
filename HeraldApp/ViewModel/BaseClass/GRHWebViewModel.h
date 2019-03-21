@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) RACSignal * evaluateJavascriptSignal;
 
 -(void) evalJS:(NSString *) jsString;
+-(void) didFinshLoadingInject;
+-(void) set
+
 
 @end
 
