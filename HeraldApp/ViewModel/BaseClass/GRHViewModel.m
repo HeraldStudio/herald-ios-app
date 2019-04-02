@@ -10,6 +10,8 @@
 #import "GRHViewModelServices.h"
 #import "GRHLoginViewModel.h"
 #import "SSKeychain+GRHUtil.h"
+#import <UserNotifications/UserNotifications.h>
+
 @interface GRHViewModel ()
 
 @property (nonatomic, strong, readwrite) id<GRHViewModelServices> services;
@@ -78,6 +80,15 @@
     [SSKeychain deleteToken];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:GRH_USERINFO_DEFUALTS];
+    // 清除所有通知
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+        [notificationCenter getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+            for(UNNotificationRequest *request in requests){
+                    [notificationCenter removePendingNotificationRequestsWithIdentifiers:@[request.identifier]];
+            }
+        }];
+    }
     GRHLoginViewModel *loginViewModel = [[GRHLoginViewModel alloc] initWithServices:self.services params:nil];
     [self.services resetRootViewModel:loginViewModel]; // 返回登录页面重新登录
 }
