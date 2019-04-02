@@ -20,6 +20,8 @@
 @property (nonatomic, strong, readwrite) RACSignal * evaluateJavascriptSignal;
 @property (nonatomic, strong, readwrite) NSString *token;
 
+-(void)setLocalNotificationWithTitle:(NSString *)title body:(NSString *)body at:(NSNumber *)timestamp type:(NSString *)type;
+-(void)clearLocalNotificationsOfType:(NSString *)type;
 
 @end
 
@@ -44,17 +46,26 @@
 - (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
     NSLog(@"js postMessage：%@",message.body);
     if([(NSString *)message.body[@"action"] isEqualToString:@"navigate"]){
+        // jsBridge navigate动作
         GRHContentViewModel *newVM = [[GRHContentViewModel alloc] initWithServices:self.services params:@{@"title":message.body[@"name"],@"path":message.body[@"path"]}];
         [self.services pushViewModel:newVM animated:YES];
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"logout"]){
+        // jsBridge logout动作
         [self logout];
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"openURL"]){
+        // jsBridge openURL动作
         NSURL *targetURL = [NSURL URLWithString:message.body[@"url"]];
         if([(NSNumber *)message.body[@"inApp"] boolValue]){
             //TODO
         } else {
             [[UIApplication sharedApplication] openURL:targetURL];  
         }
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"setLocalNotification"]){
+        // jsBridge setLocalNotification动作
+        [self setLocalNotificationWithTitle:message.body[@"title"] body:message.body[@"body"] at:message.body[@"timestamp"] type:message.body[@"type"]];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"clearLocalNotification"]){
+        // jsBridge clearLocalNotification动作
+        [self clearLocalNotificationsOfType:message.body[@"type"]];
     }
 }
 
@@ -85,6 +96,7 @@
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSUInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
         NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:notificationTime];
+        
         UNCalendarNotificationTrigger* trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateComponent repeats:NO];
         
         NSString *uuid = [[NSUUID UUID] UUIDString];

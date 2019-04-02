@@ -24,7 +24,7 @@
 /// Hybrid
 ///-----------
 
-#define GRH_HYBRID_BASEURL @"http://192.168.1.201:8080/"
+#define GRH_HYBRID_BASEURL @"http://192.168.1.101:8080/"
 #define GRH_HYBRID_DEBUG YES
 
 ///-----------

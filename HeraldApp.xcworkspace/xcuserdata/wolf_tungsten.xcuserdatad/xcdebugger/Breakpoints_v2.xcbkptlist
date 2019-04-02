@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HeraldApp/ViewModel/BaseClass/GRHWebViewModel.m"
-            timestampString = "572285476.948303"
+            timestampString = "575905992.779569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "GRHWebViewModel"
-            landmarkType = "3">
+            landmarkName = "-evalJS:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

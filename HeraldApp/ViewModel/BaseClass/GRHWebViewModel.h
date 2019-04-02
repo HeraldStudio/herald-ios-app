@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) evalJS:(NSString *) jsString;
 -(void) didFinshLoadingInject;
--(void) set
 
 
 @end
