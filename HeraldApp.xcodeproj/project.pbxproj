@@ -11,6 +11,7 @@
 		1905AB6F221AA89D0095FA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1905AB6E221AA89D0095FA64 /* Assets.xcassets */; };
 		1905AB72221AEA980095FA64 /* GRHContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB71221AEA980095FA64 /* GRHContentViewModel.m */; };
 		1905AB75221AEBB90095FA64 /* GRHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB74221AEBB90095FA64 /* GRHContentViewController.m */; };
+		190884F6229042D500074091 /* TodayViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 190884F5229042D500074091 /* TodayViewDataSource.m */; };
 		192B08BD22194A8800EC7494 /* GRHWKURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */; };
 		194F360D220D206B00EFB3AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F360C220D206B00EFB3AD /* LaunchScreen.xib */; };
 		194F361D220D38EA00EFB3AD /* GRHNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F361C220D38EA00EFB3AD /* GRHNavigationControllerStack.m */; };
@@ -84,6 +85,9 @@
 		1905AB71221AEA980095FA64 /* GRHContentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHContentViewModel.m; sourceTree = "<group>"; };
 		1905AB73221AEBB90095FA64 /* GRHContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHContentViewController.h; sourceTree = "<group>"; };
 		1905AB74221AEBB90095FA64 /* GRHContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHContentViewController.m; sourceTree = "<group>"; };
+		190884F4229042D500074091 /* TodayViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewDataSource.h; sourceTree = "<group>"; };
+		190884F5229042D500074091 /* TodayViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewDataSource.m; sourceTree = "<group>"; };
+		190884F722904A9C00074091 /* today-ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "today-ext.entitlements"; sourceTree = "<group>"; };
 		192B08BB22194A8800EC7494 /* GRHWKURLSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWKURLSchemeHandler.h; sourceTree = "<group>"; };
 		192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWKURLSchemeHandler.m; sourceTree = "<group>"; };
 		194F360C220D206B00EFB3AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -346,10 +350,13 @@
 		19F21CFB21AEA12000C36688 /* today-ext */ = {
 			isa = PBXGroup;
 			children = (
+				190884F722904A9C00074091 /* today-ext.entitlements */,
 				19F21CFC21AEA12000C36688 /* TodayViewController.h */,
 				19F21CFD21AEA12000C36688 /* TodayViewController.m */,
 				19F21CFF21AEA12000C36688 /* MainInterface.storyboard */,
 				19F21D0221AEA12000C36688 /* Info.plist */,
+				190884F4229042D500074091 /* TodayViewDataSource.h */,
+				190884F5229042D500074091 /* TodayViewDataSource.m */,
 			);
 			path = "today-ext";
 			sourceTree = "<group>";
@@ -459,6 +466,11 @@
 					};
 					19F21CF721AEA12000C36688 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -469,6 +481,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 1998C07C21A969E100D84BFB;
 			productRefGroup = 1998C08621A969E100D84BFB /* Products */;
@@ -629,6 +642,7 @@
 			files = (
 				19F285912212C94200CAE610 /* GRHWebServiceImpl.m in Sources */,
 				19F21CFE21AEA12000C36688 /* TodayViewController.m in Sources */,
+				190884F6229042D500074091 /* TodayViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3C1F40E7CC5D1AA0016D265 /* Pods-today-ext.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "today-ext/today-ext.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YSN7CN448;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -856,6 +871,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DD542A967D36800DD7F42E2 /* Pods-today-ext.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "today-ext/today-ext.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YSN7CN448;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
