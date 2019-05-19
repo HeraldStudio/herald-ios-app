@@ -12,6 +12,8 @@
 		1905AB72221AEA980095FA64 /* GRHContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB71221AEA980095FA64 /* GRHContentViewModel.m */; };
 		1905AB75221AEBB90095FA64 /* GRHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1905AB74221AEBB90095FA64 /* GRHContentViewController.m */; };
 		190884F6229042D500074091 /* TodayViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 190884F5229042D500074091 /* TodayViewDataSource.m */; };
+		190884FB229149BA00074091 /* TodayViewTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 190884F9229149BA00074091 /* TodayViewTableCellTableViewCell.m */; };
+		190884FC229149BA00074091 /* TodayViewTableCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 190884FA229149BA00074091 /* TodayViewTableCellTableViewCell.xib */; };
 		192B08BD22194A8800EC7494 /* GRHWKURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */; };
 		194F360D220D206B00EFB3AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F360C220D206B00EFB3AD /* LaunchScreen.xib */; };
 		194F361D220D38EA00EFB3AD /* GRHNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F361C220D38EA00EFB3AD /* GRHNavigationControllerStack.m */; };
@@ -88,6 +90,9 @@
 		190884F4229042D500074091 /* TodayViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewDataSource.h; sourceTree = "<group>"; };
 		190884F5229042D500074091 /* TodayViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewDataSource.m; sourceTree = "<group>"; };
 		190884F722904A9C00074091 /* today-ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "today-ext.entitlements"; sourceTree = "<group>"; };
+		190884F8229149BA00074091 /* TodayViewTableCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewTableCellTableViewCell.h; sourceTree = "<group>"; };
+		190884F9229149BA00074091 /* TodayViewTableCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewTableCellTableViewCell.m; sourceTree = "<group>"; };
+		190884FA229149BA00074091 /* TodayViewTableCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewTableCellTableViewCell.xib; sourceTree = "<group>"; };
 		192B08BB22194A8800EC7494 /* GRHWKURLSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHWKURLSchemeHandler.h; sourceTree = "<group>"; };
 		192B08BC22194A8800EC7494 /* GRHWKURLSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHWKURLSchemeHandler.m; sourceTree = "<group>"; };
 		194F360C220D206B00EFB3AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -357,6 +362,9 @@
 				19F21D0221AEA12000C36688 /* Info.plist */,
 				190884F4229042D500074091 /* TodayViewDataSource.h */,
 				190884F5229042D500074091 /* TodayViewDataSource.m */,
+				190884F8229149BA00074091 /* TodayViewTableCellTableViewCell.h */,
+				190884F9229149BA00074091 /* TodayViewTableCellTableViewCell.m */,
+				190884FA229149BA00074091 /* TodayViewTableCellTableViewCell.xib */,
 			);
 			path = "today-ext";
 			sourceTree = "<group>";
@@ -511,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190884FC229149BA00074091 /* TodayViewTableCellTableViewCell.xib in Resources */,
 				19F21D0121AEA12000C36688 /* MainInterface.storyboard in Resources */,
 				19F285A22213048100CAE610 /* Localizable.strings in Resources */,
 			);
@@ -641,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F285912212C94200CAE610 /* GRHWebServiceImpl.m in Sources */,
+				190884FB229149BA00074091 /* TodayViewTableCellTableViewCell.m in Sources */,
 				19F21CFE21AEA12000C36688 /* TodayViewController.m in Sources */,
 				190884F6229042D500074091 /* TodayViewDataSource.m in Sources */,
 			);

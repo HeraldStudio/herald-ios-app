@@ -66,6 +66,10 @@
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"clearLocalNotification"]){
         // jsBridge clearLocalNotification动作
         [self clearLocalNotificationsOfType:message.body[@"type"]];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"addTodayExtItems"]) {
+        [self addTodayExtItems:message.body[@"items"] of:message.body[@"type"]];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"clearTodayExtItems"]) {
+        [self clearTodayExtItemsOf:message.body[@"type"]];
     }
 }
 
@@ -123,6 +127,16 @@
             }
         }];
     }
+}
+
+-(void)addTodayExtItems:(NSArray *)items of:(NSString *)type {
+    NSUserDefaults* todayExtDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.myseu"];
+    [todayExtDefaults setObject:items forKey:type];
+}
+
+-(void)clearTodayExtItemsOf:(NSString *)type {
+    NSUserDefaults* todayExtDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.myseu"];
+    [todayExtDefaults removeObjectForKey:type];
 }
 
 -(void)didFinshLoadingInject {
