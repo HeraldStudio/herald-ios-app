@@ -7,6 +7,7 @@
 //
 
 #import "GRHWebViewModel.h"
+#import "GRHPrepareViewModel.h"
 #import "GRHUtil.h"
 #import "SSKeychain+GRHUtil.h"
 #import "GRHLoginViewModel.h"
@@ -19,6 +20,7 @@
 @property (nonatomic, strong, readwrite) NSString * jsToEval;
 @property (nonatomic, strong, readwrite) RACSignal * evaluateJavascriptSignal;
 @property (nonatomic, strong, readwrite) NSString *token;
+@property (nonatomic, strong, readwrite) RACCommand *reloadCommand;
 
 -(void)setLocalNotificationWithTitle:(NSString *)title body:(NSString *)body at:(NSNumber *)timestamp type:(NSString *)type;
 -(void)clearLocalNotificationsOfType:(NSString *)type;
@@ -36,6 +38,10 @@
         [self.services resetRootViewModel:[[GRHLoginViewModel alloc] initWithServices:self.services params:nil]];
     }
     self.token = SSKeychain.token;
+    self.reloadCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        [self.services resetRootViewModel:[[GRHPrepareViewModel alloc] initWithServices:self.services params:nil]];
+        return [RACSignal empty];
+    }];
     
 }
 
@@ -114,7 +120,7 @@
 
 -(void)clearLocalNotificationsOfType:(NSString *)type{
     if (@available(iOS 10.0, *)) {
-        // 设置通知的标题和内容
+        
         
         UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
         

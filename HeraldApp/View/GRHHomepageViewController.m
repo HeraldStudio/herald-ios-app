@@ -20,6 +20,7 @@
 @property (nonatomic, strong, readwrite) NSArray * tabButtonImageNamePositive;
 @property (nonatomic, strong, readwrite) NSArray * tabButtonImageNameNegative;
 @property (nonatomic, strong, readwrite) NSArray * tabButtonText;
+@property int reloadCounter;
 
 @end
 
@@ -33,6 +34,17 @@
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.title = @"返回";
     self.navigationItem.backBarButtonItem = backButtonItem;
+    
+    // 设置刷新按钮
+    UIButton *reloadButton = [[UIButton alloc] init];
+    //[reloadButton setTitle:@"刷新" forState:UIControlStateNormal];
+    [reloadButton setImage:[UIImage imageNamed:@"reload-button"] forState:UIControlStateNormal];
+    UIBarButtonItem * reloadButtonItem = [[UIBarButtonItem alloc] initWithCustomView:reloadButton];
+    [reloadButton addTarget:self action:@selector(reloadClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = reloadButtonItem;
+    
+    self.reloadCounter = 0;
+    
 }
 
 - (void)constructUI {
@@ -118,6 +130,29 @@
             make.bottom.equalTo(self.view.mas_bottom).offset(-4);
         }
     }];
+}
+-(void) reloadClick:(UIBarButtonItem *)sender{
+    ((UIImageView *)self.tabBarButtonImageViews[0]).image = [UIImage imageNamed:self.tabButtonImageNamePositive[0]] ;
+    ((UIImageView *)self.tabBarButtonImageViews[1]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[1]] ;
+    ((UIImageView *)self.tabBarButtonImageViews[2]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[2]] ;
+    ((UIImageView *)self.tabBarButtonImageViews[3]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[3]] ;
+//    [self.tabBarButtonImageViews[1] setImage:self.tabButtonImageNameNegative[1]];
+//    [self.tabBarButtonImageViews[2] setImage:self.tabButtonImageNameNegative[2]];
+//    [self.tabBarButtonImageViews[3] setImage:self.tabButtonImageNameNegative[3]];
+    self.reloadCounter++;
+    if (self.reloadCounter >= 10) {
+        // 出现这种情况就重新彻底
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"遇到问题？" message:@"发现您多次点击刷新，重新加载可能帮助您解决问题" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"重新加载" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+            [self.viewModel.reloadCommand execute:nil];
+        }]];
+        // 弹出对话框
+        [self presentViewController:alert animated:true completion:nil];
+        self.reloadCounter = 0;
+    } else {
+        [self.webView reload];
+    }
+    
 }
 
 -(void) tabClick:(UITapGestureRecognizer *)tabButton{
