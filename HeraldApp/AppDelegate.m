@@ -60,6 +60,7 @@
     } else {
         // iOS 10 以下就不通知了。
     }
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 - (GRHViewModel *)createInitialViewModel {
