@@ -21,6 +21,7 @@
 @property (nonatomic, strong, readwrite) RACSignal * evaluateJavascriptSignal;
 @property (nonatomic, strong, readwrite) NSString *token;
 @property (nonatomic, strong, readwrite) RACCommand *reloadCommand;
+@property (nonatomic, weak, readwrite) NSTimer *watchDog;
 
 -(void)setLocalNotificationWithTitle:(NSString *)title body:(NSString *)body at:(NSNumber *)timestamp type:(NSString *)type;
 -(void)clearLocalNotificationsOfType:(NSString *)type;
@@ -42,7 +43,9 @@
         [self.services resetRootViewModel:[[GRHPrepareViewModel alloc] initWithServices:self.services params:nil]];
         return [RACSignal empty];
     }];
-    
+    // 看门狗机制 - hybrid 内核加载 10s 之内需要将狗拴住，否则将会触发重新加载
+    NSTimer *watchDog = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(dogOut:) userInfo:nil repeats:NO];
+    self.watchDog = watchDog;
 }
 
 - (void) evalJS:(NSString *)jsString {
@@ -76,6 +79,8 @@
         [self addTodayExtItems:message.body[@"items"] of:message.body[@"type"]];
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"clearTodayExtItems"]) {
         [self clearTodayExtItemsOf:message.body[@"type"]];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"holdTheDog"]){
+        [self.watchDog invalidate];
     }
 }
 
@@ -83,6 +88,10 @@
     NSLog(@"加载完毕");
     [self evalJS:@"setInterval(function(){console.log('inject Success')}, 1000)"];
     [self didFinshLoadingInject];
+}
+
+- (void)dogOut:(NSTimer *)timer{
+    [self.services resetRootViewModel:[[GRHPrepareViewModel alloc] initWithServices:self.services params:nil]];
 }
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler

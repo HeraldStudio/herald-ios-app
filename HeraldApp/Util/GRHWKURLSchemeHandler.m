@@ -41,7 +41,7 @@
                                      @"Content-type":fileMIME,
                                      @"Content-length":[NSString stringWithFormat:@"%lu",(unsigned long)[data length]]
                                      };
-    NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", GRH_HYBRID_BASEURL, localFileName]] statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:responseHeader];
+    NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"herald-hybrid://hybrid-ios.myseu.cn/", localFileName]] statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:responseHeader];
     [urlSchemeTask didReceiveResponse:response];
     [urlSchemeTask didReceiveData:data];
     [urlSchemeTask didFinish];

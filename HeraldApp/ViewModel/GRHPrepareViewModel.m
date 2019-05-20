@@ -33,7 +33,7 @@
                 self.startAnimation = @(YES);
             } else {
                 [self.services.hybridService.fetchLocalizedFileList subscribeNext:^(id  _Nullable x) {
-                    NSLog(@"%@", x);
+                    NSLog(@"获取到的离线包信息%@", x);
                     RACSignal *updateTask = [self.services.hybridService updateOfflinePackage:x[@"packageName"]];
                     [updateTask subscribeNext:^(id  _Nullable y) {
                         NSLog(@"下载完成");

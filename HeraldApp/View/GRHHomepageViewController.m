@@ -7,6 +7,7 @@
 //
 
 #import "GRHHomepageViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface GRHHomepageViewController ()
 
@@ -31,6 +32,7 @@
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.backgroundColor = HexRGB(0x13ACD9);
     [self constructUI];
+    [self checkNotification];
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.title = @"返回";
     self.navigationItem.backBarButtonItem = backButtonItem;
@@ -45,6 +47,37 @@
     
     self.reloadCounter = 0;
     
+}
+
+- (void)checkNotification{
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            if(settings.authorizationStatus == UNAuthorizationStatusDenied){
+                NSLog(@"通知被禁止");
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"通知权限被禁止" message:@"小猴偷米通知权限被禁用，您将无法收到来自小猴的提醒" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"以后再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+                    
+                }]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"前往开启" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
+                    if (UIApplicationOpenSettingsURLString != NULL) {
+                        UIApplication *application = [UIApplication sharedApplication];
+                        NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                        if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+                            [application openURL:URL options:@{} completionHandler:nil];
+                        } else {
+                            [application openURL:URL];
+                        }
+                    }
+                }]];
+                // 弹出对话框
+                [self presentViewController:alert animated:true completion:nil];
+            }
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)constructUI {
@@ -136,9 +169,10 @@
     ((UIImageView *)self.tabBarButtonImageViews[1]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[1]] ;
     ((UIImageView *)self.tabBarButtonImageViews[2]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[2]] ;
     ((UIImageView *)self.tabBarButtonImageViews[3]).image = [UIImage imageNamed:self.tabButtonImageNameNegative[3]] ;
-//    [self.tabBarButtonImageViews[1] setImage:self.tabButtonImageNameNegative[1]];
-//    [self.tabBarButtonImageViews[2] setImage:self.tabButtonImageNameNegative[2]];
-//    [self.tabBarButtonImageViews[3] setImage:self.tabButtonImageNameNegative[3]];
+    ((UILabel *)self.tabBarButtonTextViews[0]).textColor = HexRGB(0x13ACD9);
+    ((UILabel *)self.tabBarButtonTextViews[1]).textColor = HexRGB(0x888888);
+    ((UILabel *)self.tabBarButtonTextViews[2]).textColor = HexRGB(0x888888);
+    ((UILabel *)self.tabBarButtonTextViews[3]).textColor = HexRGB(0x888888);
     self.reloadCounter++;
     if (self.reloadCounter >= 10) {
         // 出现这种情况就重新彻底

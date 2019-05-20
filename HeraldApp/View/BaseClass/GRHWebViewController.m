@@ -41,20 +41,20 @@
     NSString *loadUrlString = nil;
     if (@available(iOS 11.0, *)) {
         [webViewConfiguration setURLSchemeHandler:[[GRHWKURLSchemeHandler alloc] init] forURLScheme:@"herald-hybrid"];
-        loadUrlString = [NSString stringWithFormat:@"%@%@",@"herald-hybrid://hybrid.myseu.cn/",@"index.html"];
+        loadUrlString = [NSString stringWithFormat:@"%@%@",@"herald-hybrid://hybrid-ios.myseu.cn/",@"index.html"];
     } else {
         // 对于 iOS 11 以前的版本无法拦截自定义协议，所以这部分用户使用 CDN 加载
-        loadUrlString = [NSString stringWithFormat:@"%@%@",@"https://hybrid.myseu.cn/",@"index.html"];
+        loadUrlString = [NSString stringWithFormat:@"%@%@",GRH_HYBRID_BASEURL,@"index.html"];
     }
     if(GRH_HYBRID_DEBUG){
         // 调试模式加载配置的地址
-        loadUrlString = [NSString stringWithFormat:@"%@%@",GRH_HYBRID_BASEURL,@"index.html"];
+        loadUrlString = [NSString stringWithFormat:@"%@%@",GRH_HYBRID_DEBUG_URL,@"index.html"];
     }
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
     webView.navigationDelegate = self.viewModel;
     self.webView = webView;
     [self.view addSubview:webView];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:loadUrlString]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:loadUrlString] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30.0f]];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);

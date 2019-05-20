@@ -22,6 +22,7 @@
 - (AFHTTPSessionManager *)session{
     if(_session == nil){
         AFHTTPSessionManager *session = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:GRH_HYBRID_BASEURL]];
+        [session.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
         //[session setRequestSerializer:[AFJSONRequestSerializer serializer]];
         //[session setResponseSerializer:[AFJSONResponseSerializer serializer]];
         _session = session;
@@ -34,6 +35,7 @@
              createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                  
                  [self.session setRequestSerializer:[AFJSONRequestSerializer serializer]];
+                 [self.session.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
                  [self.session setResponseSerializer:[AFJSONResponseSerializer serializer]];
                  
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -42,6 +44,7 @@
                      
                  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                      NSData *fileListData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
+                     NSLog(@"线上离线包信息:%@", responseObject[@"packageName"]);
                      [defaults setObject:fileListData forKey:GRH_HYBRID_PACKAGE_INFO_DEFAULTS];
                      [subscriber sendNext:responseObject];
                      [subscriber sendCompleted];
@@ -126,8 +129,5 @@
              }]
             setNameWithFormat:@"-fetchLocalizedFileList"];
 }
-
-
-
 
 @end

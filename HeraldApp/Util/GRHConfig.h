@@ -24,8 +24,9 @@
 /// Hybrid
 ///-----------
 
-#define GRH_HYBRID_BASEURL @"http://192.168.1.204:8080/"
-#define GRH_HYBRID_DEBUG YES
+#define GRH_HYBRID_BASEURL @"https://hybrid-ios.myseu.cn/"
+#define GRH_HYBRID_DEBUG NO
+#define GRH_HYBRID_DEBUG_URL @"http://192.168.1.101:8080/"
 
 ///-----------
 /// UserDefualts

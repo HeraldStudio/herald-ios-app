@@ -39,22 +39,27 @@
     self.navigationControllerStack = [[GRHNavigationControllerStack alloc] initWithServices:self.services];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     [self.services resetRootViewModel:[self createInitialViewModel]];
     [self.window makeKeyAndVisible];
     [self configureAppearance];
+    [self initNotificationPush];
     
-    // 请求推送通知
+    return YES;
+}
+
+- (void)initNotificationPush{
     if (@available(iOS 10.0, *)) {
         UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-        [center requestAuthorizationWithOptions:                                           (UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+        [center requestAuthorizationWithOptions:                                           (UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
                               completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                  if (!error) {
+                                      NSLog(@"请求推送权限成功！");
+                                  }
                               }];
     } else {
         // iOS 10 以下就不通知了。
     }
-    
-    
-    return YES;
 }
 
 - (GRHViewModel *)createInitialViewModel {

@@ -10,6 +10,7 @@
 #import "GRHPrepareViewModel.h"
 #import "SSKeychain+GRHUtil.h"
 #import "GRHOAuthWebViewModel.h"
+#import <UserNotifications/UserNotifications.h>
 @interface GRHLoginViewModel ()
 
 @property (nonatomic, strong, readwrite) RACSignal *validLoginSignal;
@@ -60,6 +61,15 @@
             } else if ([authResult[@"code"] isEqualToNumber:@(200)]) {
                 // 成功
                 [SSKeychain setToken:authResult[@"result"]];
+                // 清除所有通知
+                if (@available(iOS 10.0, *)) {
+                    UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+                    [notificationCenter getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+                        for(UNNotificationRequest *request in requests){
+                            [notificationCenter removePendingNotificationRequestsWithIdentifiers:@[request.identifier]];
+                        }
+                    }];
+                }
                 [self.services resetRootViewModel:[[GRHPrepareViewModel alloc] initWithServices:self.services params:nil]];
             } else if ([authResult[@"code"] isEqualToNumber:@(303)]){
                 // 返回 303 时设置 verifyURL
