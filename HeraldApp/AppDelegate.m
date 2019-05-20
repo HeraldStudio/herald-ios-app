@@ -44,7 +44,7 @@
     [self.window makeKeyAndVisible];
     [self configureAppearance];
     [self initNotificationPush];
-    
+    [[UIApplication sharedApplication] setShortcutItems:@[]];
     return YES;
 }
 

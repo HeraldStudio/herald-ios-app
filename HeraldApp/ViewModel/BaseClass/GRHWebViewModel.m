@@ -67,7 +67,7 @@
         if([(NSNumber *)message.body[@"inApp"] boolValue]){
             //TODO
         } else {
-            [[UIApplication sharedApplication] openURL:targetURL];  
+            [[UIApplication sharedApplication] openURL:targetURL];
         }
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"setLocalNotification"]){
         // jsBridge setLocalNotification动作
