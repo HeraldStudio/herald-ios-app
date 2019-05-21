@@ -541,21 +541,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HeraldApp/Pods-HeraldApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking-iOS9.0/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry-iOS9.0/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/Reachability-iOS9.0/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS9.0/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SSKeychain-iOS9.0/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/WXTabBarController/WXTabBarController.framework",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking-iOS12.1/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry-iOS12.1/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/Reachability-iOS12.1/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS12.1/ReactiveObjC.framework",
-				"${BUILT_PRODUCTS_DIR}/SSKeychain-iOS12.1/SSKeychain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

@@ -63,6 +63,18 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"获取deviceToken失败，原因：%@", error);
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:@"null" forKey:@"deviceToken"];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"deviceToken获取成功");
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:deviceToken forKey:@"deviceToken"];
+}
+
 - (GRHViewModel *)createInitialViewModel {
     // The user has logged-in.
     if ([SSKeychain token].isExist) {
