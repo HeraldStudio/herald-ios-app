@@ -15,6 +15,7 @@
 
 - (RACSignal *)authWithCardnum:(NSString *)cardnum password:(NSString *)password;
 - (RACSignal *)apiUser;
+- (RACSignal *)uploadDeviceToken;
 
 @end
 

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal *)authWithCardnum:(NSString *)cardnum password:(NSString *)password;
 - (RACSignal *)apiUser;
-
+- (RACSignal *)uploadDeviceToken;
 @end
 
 NS_ASSUME_NONNULL_END

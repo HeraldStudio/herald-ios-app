@@ -17,6 +17,13 @@
 -(void) initialize {
     [super initialize];
     self.title = @"小猴偷米";
+    // 上传deviceToken
+    RACSignal *uploadDeviceToken = [self.services.webService uploadDeviceToken];
+    [uploadDeviceToken subscribeNext:^(id  _Nullable x) {
+    
+    } error:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 -(void) webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{

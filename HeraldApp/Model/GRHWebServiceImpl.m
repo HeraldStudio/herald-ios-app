@@ -72,5 +72,37 @@
             setNameWithFormat:@"webservice:/api/user"];
 }
 
+- (RACSignal *)uploadDeviceToken {
+    return [[RACSignal
+             createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                 
+                 NSUserDefaults *userDefualt = [NSUserDefaults standardUserDefaults];
+                 NSData *deviceTokenData = [userDefualt objectForKey:@"deviceToken"];
+
+                 if (deviceTokenData != nil) {
+                     
+                     NSString *deviceTokenString = [[[[deviceTokenData description]
+                                                      stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                                                     stringByReplacingOccurrencesOfString: @">" withString: @""]
+                                                    stringByReplacingOccurrencesOfString: @" " withString: @""];
+                     NSLog(@"上传deviceToken%@", deviceTokenString);
+                     NSURLSessionDataTask *task = [self.session POST:@"api/push/ios" parameters:@{@"deviceToken":deviceTokenString} progress:^(NSProgress * _Nonnull uploadProgress) {
+                         
+                     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         [subscriber sendNext:responseObject];
+                         [subscriber sendCompleted];
+                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         [subscriber sendError:error];
+                     }];
+                     return [RACDisposable disposableWithBlock:^{
+                         [task cancel];
+                     }];
+                 }
+                 return [RACDisposable disposableWithBlock:^{
+                 }];
+             }]
+            setNameWithFormat:@"-uploadDeviceToken"];
+}
+
 
 @end
