@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.0</string>
+	<string>2.0.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -35,8 +35,12 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>3</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>部分功能（如：寻物启事）需要访问相机</string>
 	<key>NSMainNibFile</key>
 	<string>LaunchScreen</string>
 	<key>NSPhotoLibraryUsageDescription</key>

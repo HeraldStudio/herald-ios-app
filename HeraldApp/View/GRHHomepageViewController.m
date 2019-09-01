@@ -8,6 +8,8 @@
 
 #import "GRHHomepageViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import <AVFoundation/AVCaptureDevice.h>
+#import <AVFoundation/AVMediaFormat.h>
 
 @interface GRHHomepageViewController ()
 
@@ -67,7 +69,7 @@
                         if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
                             [application openURL:URL options:@{} completionHandler:nil];
                         } else {
-                            [application openURL:URL];
+                            [application openURL:URL options:@{} completionHandler:nil];
                         }
                     }
                 }]];
@@ -80,6 +82,15 @@
     }
 }
 
+- (void)checkAuthorization {
+    // 检查权限
+    // 检查相机权限
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusRestricted || status == AVAuthorizationStatusDenied)
+    {
+        NSLog(@"无相机权限");
+    }
+}
 - (void)constructUI {
     UIView *tabBarView = [[UIView alloc] init];
     self.tabBarView = tabBarView;

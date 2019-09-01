@@ -219,7 +219,7 @@
         if(x != nil) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码输入错误次数过多，本次登录需要额外验证过程；请通过统一身份认证验证后再次尝试登录。" preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"前往验证" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.viewModel.verifyURL]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.viewModel.verifyURL] options:@{} completionHandler:nil];
             }]];
             // 弹出对话框
             [self presentViewController:alert animated:true completion:nil];

@@ -108,7 +108,7 @@
 		1998C08521A969E100D84BFB /* HeraldApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeraldApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1998C08821A969E100D84BFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1998C08921A969E100D84BFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1998C09621A969E200D84BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1998C09621A969E200D84BFB /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1998C09721A969E200D84BFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19A46718221C475A00BFED72 /* GRHOAuthWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRHOAuthWebViewModel.h; sourceTree = "<group>"; };
 		19A46719221C475A00BFED72 /* GRHOAuthWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRHOAuthWebViewModel.m; sourceTree = "<group>"; };

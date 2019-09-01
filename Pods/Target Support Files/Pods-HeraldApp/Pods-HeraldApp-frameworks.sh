@@ -143,38 +143,28 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking-iOS9.0/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-iOS9.0/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Reachability-iOS9.0/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS9.0/ReactiveObjC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain-iOS9.0/SSKeychain.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WXTabBarController/WXTabBarController.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking-iOS12.1/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-iOS12.1/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Reachability-iOS12.1/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS12.1/ReactiveObjC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain-iOS12.1/SSKeychain.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking-iOS9.0/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-iOS9.0/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Reachability-iOS9.0/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS9.0/ReactiveObjC.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain-iOS9.0/SSKeychain.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WXTabBarController/WXTabBarController.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking-iOS12.1/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Masonry-iOS12.1/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Reachability-iOS12.1/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC-iOS12.1/ReactiveObjC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SSKeychain-iOS12.1/SSKeychain.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

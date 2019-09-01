@@ -60,8 +60,9 @@
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
             //make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
         } else {
-            UIView *topLayoutGuide = (id)self.topLayoutGuide;
-            make.top.equalTo(topLayoutGuide.mas_bottom);
+            //UIView *topLayoutGuide = (id)self.topLayoutGuide;
+            make.top.equalTo(self.view.mas_top).offset(64);
+            //make.top.equalTo(topLayoutGuide);
             //make.bottom.equalTo(self.view.mas_bottom);
         }
         make.left.equalTo(self.view.mas_left);

@@ -63,6 +63,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     NSLog(@"获取deviceToken失败，原因：%@", error);
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];

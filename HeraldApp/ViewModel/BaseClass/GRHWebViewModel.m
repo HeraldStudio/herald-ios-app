@@ -58,6 +58,9 @@
         // jsBridge navigate动作
         GRHContentViewModel *newVM = [[GRHContentViewModel alloc] initWithServices:self.services params:@{@"title":message.body[@"name"],@"path":message.body[@"path"]}];
         [self.services pushViewModel:newVM animated:YES];
+    } else if ([(NSString *)message.body[@"action"] isEqualToString:@"goback"]){
+        // jsBridge 返回上层
+        [self.services popViewModelAnimated:YES];
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"logout"]){
         // jsBridge logout动作
         [self logout];
@@ -67,7 +70,7 @@
         if([(NSNumber *)message.body[@"inApp"] boolValue]){
             //TODO
         } else {
-            [[UIApplication sharedApplication] openURL:targetURL];
+            [[UIApplication sharedApplication] openURL:targetURL options:@{} completionHandler:nil];
         }
     } else if ([(NSString *)message.body[@"action"] isEqualToString:@"setLocalNotification"]){
         // jsBridge setLocalNotification动作
@@ -98,7 +101,7 @@
 {
     // 如果是在新页面中打开则直接打开浏览器？
     if (navigationAction.targetFrame == nil) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
     }
     decisionHandler(WKNavigationActionPolicyAllow);
 }
